@@ -1,3 +1,12 @@
 <resources>
   <string name="app_name">MJI</string>
+
+  <string name="title_login_page">Login Screen</string>
+  <string name="sign_in_to_mji">Sign in to MJI </string>
+  <string name="hint_username">Username</string>
+  <string name="hint_password">Password</string>
+  <string name="login_continue">CONTINUE</string>
+  <string name="error_msg_username_not_valid">Username should be longer than two characters</string>
+  <string name="error_msg_password_not_valid">Password should consist minimum 6 characters with at least 1 uppercase character, 1 number</string>
+
 </resources>
