@@ -24,7 +24,7 @@ abstract class BaseFragment<VB : ViewBinding>(
 
   }
 
-  open fun collectViewState() {
+  open fun observeData() {
 
   }
 
@@ -40,7 +40,7 @@ abstract class BaseFragment<VB : ViewBinding>(
   override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
     super.onViewCreated(view, savedInstanceState)
     setupUI()
-    collectViewState()
+    observeData()
   }
 
   override fun onDestroyView() {

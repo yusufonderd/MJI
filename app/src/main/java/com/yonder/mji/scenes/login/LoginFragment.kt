@@ -1,6 +1,7 @@
 package com.yonder.mji.scenes.login
 
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
 import com.yonder.mji.core.base.BaseFragment
 import com.yonder.mji.databinding.FragmentLoginBinding
 import dagger.hilt.android.AndroidEntryPoint
@@ -19,7 +20,7 @@ class LoginFragment : BaseFragment<FragmentLoginBinding>(FragmentLoginBinding::i
     }
   }
 
-  override fun collectViewState() {
+  override fun observeData() {
     viewModel.state.observe(viewLifecycleOwner) { viewState ->
       when (viewState) {
         is LoginViewState.ShowError -> {
@@ -34,6 +35,6 @@ class LoginFragment : BaseFragment<FragmentLoginBinding>(FragmentLoginBinding::i
   }
 
   private fun navigateToHomeScreen() {
-    TODO("Navigate to home screen")
+    findNavController().navigate(LoginFragmentDirections.actionHome())
   }
 }

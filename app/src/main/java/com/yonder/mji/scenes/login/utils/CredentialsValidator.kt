@@ -15,7 +15,7 @@ class CredentialsValidator(private val listener: CredentialsValidatorResultListe
       listener.onError(R.string.error_msg_username_not_valid)
     } else {
       if (RegexValidator(PASSWORD_REGEX_PATTERN).isValid(password)) {
-        listener.onValid()
+        listener.onSuccess()
       } else {
         listener.onError(R.string.error_msg_password_not_valid)
       }
@@ -24,6 +24,6 @@ class CredentialsValidator(private val listener: CredentialsValidatorResultListe
 }
 
 interface CredentialsValidatorResultListener {
-  fun onValid()
+  fun onSuccess()
   fun onError(@StringRes messageResId: Int)
 }

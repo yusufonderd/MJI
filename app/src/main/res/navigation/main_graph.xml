@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
   xmlns:app="http://schemas.android.com/apk/res-auto"
+  android:id="@+id/main_graph"
   xmlns:tools="http://schemas.android.com/tools"
   app:startDestination="@id/loginFragment">
 
@@ -9,6 +10,22 @@
     android:name="com.yonder.mji.scenes.login.LoginFragment"
     android:label="@string/title_login_page"
     tools:layout="@layout/fragment_login">
+
+    <action
+      android:id="@+id/action_home"
+      app:destination="@id/homeFragment"
+      app:launchSingleTop="true"
+      app:popUpTo="@+id/main_graph"
+      app:popUpToInclusive="true" />
+
+  </fragment>
+
+
+  <fragment
+    android:id="@+id/homeFragment"
+    android:name="com.yonder.mji.scenes.home.HomeFragment"
+    android:label="@string/title_home_page"
+    tools:layout="@layout/fragment_home">
 
   </fragment>
 

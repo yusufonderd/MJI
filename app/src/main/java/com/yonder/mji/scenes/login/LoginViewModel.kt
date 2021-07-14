@@ -16,7 +16,7 @@ class LoginViewModel @Inject constructor() : ViewModel() {
 
   fun makeLogin(username: String, password: String) {
     val validator = CredentialsValidator(object : CredentialsValidatorResultListener {
-      override fun onValid() {
+      override fun onSuccess() {
         _state.value = LoginViewState.NavigateHomeScreen
       }
       override fun onError(messageResId: Int) {

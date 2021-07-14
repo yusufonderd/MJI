@@ -9,4 +9,8 @@
   <string name="error_msg_username_not_valid">Username should be longer than two characters</string>
   <string name="error_msg_password_not_valid">Password should consist minimum 6 characters with at least 1 uppercase character, 1 number</string>
 
+
+
+  <string name="title_home_page">Home Screen</string>
+
 </resources>
