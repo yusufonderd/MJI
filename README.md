@@ -15,6 +15,7 @@ In this case, usign MVVM architecture and repository pattern. This app inspired 
 * [Gson](https://github.com/google/gson)
 * [Jetpack Components](https://developer.android.com/jetpack) - ViewModel, ViewBinding and more
 * [JUnit5](https://junit.org/junit5/)
+* [StateLayout](https://github.com/yusufonderd/StateLayout) - For managing view states
 
 
 ## TODOs && Improvements
