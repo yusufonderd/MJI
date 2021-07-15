@@ -16,7 +16,7 @@ import com.yonder.mji.scenes.home.domain.model.StoryUIModel
 import com.yonder.statelayout.State
 import com.yonder.statelayout.StateLayoutListener
 import dagger.hilt.android.AndroidEntryPoint
-import kotlinx.coroutines.flow.collect
+import kotlinx.coroutines.flow.collectLatest
 import javax.inject.Inject
 
 @AndroidEntryPoint
@@ -41,8 +41,8 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(FragmentHomeBinding::infl
   }
 
   private fun collectViewState() {
-    lifecycleScope.launchWhenCreated {
-      viewModel.state.collect { viewState ->
+    lifecycleScope.launchWhenStarted {
+      viewModel.state.collectLatest { viewState ->
         when (viewState) {
           is HomeViewState.Load -> {
             loadViewState(viewState.homeUIModel, viewState.username)

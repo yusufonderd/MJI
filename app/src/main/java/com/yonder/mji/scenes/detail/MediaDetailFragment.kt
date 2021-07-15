@@ -7,19 +7,19 @@ import com.yonder.mji.common.mediaplayer.MtMediaPlayer
 import com.yonder.mji.common.base.BaseFragment
 import com.yonder.mji.common.extensions.setSafeOnClickListener
 import com.yonder.mji.data.remote.service.Endpoints
-import com.yonder.mji.databinding.FragmentHomeDetailBinding
+import com.yonder.mji.databinding.FragmentMediaDetailBinding
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
 
 
 @AndroidEntryPoint
-class HomeDetailFragment :
-  BaseFragment<FragmentHomeDetailBinding>(FragmentHomeDetailBinding::inflate) {
+class MediaDetailFragment :
+  BaseFragment<FragmentMediaDetailBinding>(FragmentMediaDetailBinding::inflate) {
 
   @Inject
   lateinit var mediaPlayer: MtMediaPlayer
 
-  private val args: HomeDetailFragmentArgs by navArgs()
+  private val args: MediaDetailFragmentArgs by navArgs()
 
   private val story get() = args.detail
 

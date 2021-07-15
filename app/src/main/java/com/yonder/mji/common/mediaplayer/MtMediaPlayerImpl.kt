@@ -21,12 +21,11 @@ class MtMediaPlayerImpl @Inject constructor(@ApplicationContext private val cont
     }
   }
 
-
   override fun isPlaying(): Boolean {
     return player.isPlaying
   }
 
-  override fun play(url: String) {
+  private fun play(url: String) {
     try {
       listener?.onInitialized()
       val uri: Uri = Uri.parse(url)

@@ -1,69 +1,84 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
   xmlns:app="http://schemas.android.com/apk/res-auto"
   android:layout_width="match_parent"
-  android:fillViewport="true"
   android:layout_height="match_parent">
 
   <com.yonder.statelayout.StateLayoutView
     android:id="@+id/stateLayoutView"
-    android:layout_width="match_parent"
-    app:loadingGravity="center"
-    android:layout_height="wrap_content">
+    android:layout_width="0dp"
+    android:layout_height="0dp"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent"
+    app:loadingGravity="center">
 
-  <androidx.constraintlayout.widget.ConstraintLayout
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
 
-    <androidx.constraintlayout.widget.Guideline
-      android:id="@+id/guidelineLeft"
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      android:orientation="vertical"
-      app:layout_constraintGuide_begin="@dimen/margin_24" />
-
-    <androidx.constraintlayout.widget.Guideline
-      android:id="@+id/guidelineRight"
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      android:orientation="vertical"
-      app:layout_constraintGuide_end="@dimen/margin_24" />
-
-    <androidx.constraintlayout.widget.Guideline
-      android:id="@+id/guidelineTop"
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      android:orientation="horizontal"
-      app:layout_constraintGuide_begin="@dimen/margin_32" />
-
-    <com.yonder.mji.uicomponent.meditationview.MTMeditationsView
-      android:id="@+id/mtMeditationView"
-      android:layout_width="0dp"
-      android:layout_height="wrap_content"
+    <androidx.core.widget.NestedScrollView
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:scrollbars="vertical"
+      app:layout_constraintBottom_toBottomOf="parent"
       app:layout_constraintEnd_toEndOf="parent"
-      app:layout_constraintStart_toStartOf="@+id/guidelineLeft"
-      app:layout_constraintTop_toTopOf="@+id/guidelineTop" />
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="parent">
 
-    <com.yonder.mji.uicomponent.headerview.MTHeaderView
-      android:id="@+id/mtHeaderView"
-      android:layout_width="0dp"
-      app:cardBackgroundColor="@color/header_bg"
-      android:layout_marginTop="@dimen/margin_40"
-      app:layout_constraintEnd_toStartOf="@+id/guidelineRight"
-      app:layout_constraintStart_toStartOf="@+id/guidelineLeft"
-      app:layout_constraintTop_toBottomOf="@id/mtMeditationView"
-      android:layout_height="wrap_content"/>
 
-    <com.yonder.mji.uicomponent.storiesview.MtStoriesView
-      android:id="@+id/mtStoriesView"
-      android:layout_width="0dp"
-      android:layout_height="wrap_content"
-      android:layout_marginTop="@dimen/margin_40"
-      app:layout_constraintEnd_toEndOf="parent"
-      app:layout_constraintTop_toBottomOf="@+id/mtHeaderView"
-      app:layout_constraintStart_toStartOf="@+id/guidelineLeft"/>
+      <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-  </androidx.constraintlayout.widget.ConstraintLayout>
+        <androidx.constraintlayout.widget.Guideline
+          android:id="@+id/guidelineLeft"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:orientation="vertical"
+          app:layout_constraintGuide_begin="@dimen/margin_24" />
+
+        <androidx.constraintlayout.widget.Guideline
+          android:id="@+id/guidelineRight"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:orientation="vertical"
+          app:layout_constraintGuide_end="@dimen/margin_24" />
+
+        <androidx.constraintlayout.widget.Guideline
+          android:id="@+id/guidelineTop"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:orientation="horizontal"
+          app:layout_constraintGuide_begin="@dimen/margin_32" />
+
+        <com.yonder.mji.uicomponent.meditationview.MTMeditationsView
+          android:id="@+id/mtMeditationView"
+          android:layout_width="0dp"
+          android:layout_height="wrap_content"
+          app:layout_constraintEnd_toEndOf="parent"
+          app:layout_constraintStart_toStartOf="@+id/guidelineLeft"
+          app:layout_constraintTop_toTopOf="@+id/guidelineTop" />
+
+        <com.yonder.mji.uicomponent.headerview.MTHeaderView
+          android:id="@+id/mtHeaderView"
+          android:layout_width="0dp"
+          android:layout_height="wrap_content"
+          android:layout_marginTop="@dimen/margin_40"
+          app:layout_constraintEnd_toStartOf="@+id/guidelineRight"
+          app:layout_constraintStart_toStartOf="@+id/guidelineLeft"
+          app:layout_constraintTop_toBottomOf="@id/mtMeditationView" />
+
+        <com.yonder.mji.uicomponent.storiesview.MtStoriesView
+          android:id="@+id/mtStoriesView"
+          android:layout_width="0dp"
+          android:layout_height="wrap_content"
+          android:layout_marginTop="@dimen/margin_40"
+          app:layout_constraintEnd_toEndOf="parent"
+          app:layout_constraintStart_toStartOf="@+id/guidelineLeft"
+          app:layout_constraintTop_toBottomOf="@+id/mtHeaderView" />
+
+      </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
   </com.yonder.statelayout.StateLayoutView>
 
-</androidx.core.widget.NestedScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

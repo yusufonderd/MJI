@@ -12,7 +12,7 @@ buildscript {
     glideVersion = '4.12.0'
     paging_version = '3.0.0'
     multidex_version = "2.0.1"
-    nav_version = "2.3.5"
+    nav_version = "2.4.0-alpha02"
     room_database_version = '2.3.0'
   }
   repositories {

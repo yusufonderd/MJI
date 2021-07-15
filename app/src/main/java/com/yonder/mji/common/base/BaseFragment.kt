@@ -16,20 +16,27 @@ abstract class BaseFragment<VB : ViewBinding>(
   private val inflate: Inflate<VB>
 ) : Fragment() {
 
-  internal var safeBinding: VB? = null
+  private var safeBinding: VB? = null
   val binding get() = safeBinding!!
 
   open fun initVariables(){}
   open fun initUI() {}
   open fun observeData() {}
 
+  var fragmentView: View? = null
+
   override fun onCreateView(
     inflater: LayoutInflater,
     container: ViewGroup?,
     savedInstanceState: Bundle?
   ): View? {
-    safeBinding = inflate.invoke(inflater, container, false)
-    return binding.root
+   return  if (fragmentView == null){
+      safeBinding = inflate.invoke(inflater, container, false)
+      return binding.root.also {
+        fragmentView = it
+      }
+    }else fragmentView
+
   }
 
   override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -37,11 +44,6 @@ abstract class BaseFragment<VB : ViewBinding>(
     initVariables()
     initUI()
     observeData()
-  }
-
-  override fun onDestroyView() {
-    super.onDestroyView()
-    safeBinding = null
   }
 
   fun closeFragment() {
