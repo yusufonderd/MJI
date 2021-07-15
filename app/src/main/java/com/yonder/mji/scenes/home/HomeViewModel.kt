@@ -15,7 +15,7 @@ import javax.inject.Inject
 
 @HiltViewModel
 class HomeViewModel @Inject constructor(
-  private val useCase: HomeUseCase,
+  private val homeUseCase: HomeUseCase,
   private val userPreferenceUseCase: UserPreferenceUseCase
 ) : ViewModel() {
 
@@ -26,9 +26,9 @@ class HomeViewModel @Inject constructor(
     fetchHome()
   }
 
-   fun fetchHome() {
+  fun fetchHome() {
     viewModelScope.launch {
-      useCase.fetchHome().collect { result ->
+      homeUseCase.fetchHome().collect { result ->
         _state.value = when (result) {
           is State.Loading -> HomeViewState.ShowLoading
           is State.Success -> HomeViewState.Load(result.data, userPreferenceUseCase.getUsername())

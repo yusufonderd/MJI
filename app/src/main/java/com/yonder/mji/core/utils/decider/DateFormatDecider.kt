@@ -6,12 +6,13 @@ import java.util.*
 import javax.inject.Inject
 
 private const val EPOCH_TIME_RATIO = 1000
+
 class DateFormatDecider @Inject constructor() {
 
-  fun formatEpochTime(source: String?): String{
+  fun formatEpochTime(source: String?, locale: Locale = Locale.getDefault()): String {
     return source?.toLongOrNull()?.let {
       val date = Date(it * EPOCH_TIME_RATIO)
-      date.toDateFormat(DateUtils.DEFAULT_TARGET_DATE_FORMAT)
+      date.toDateFormat(DateUtils.DEFAULT_TARGET_DATE_FORMAT,locale)
     } ?: run {
       source.orEmpty()
     }
