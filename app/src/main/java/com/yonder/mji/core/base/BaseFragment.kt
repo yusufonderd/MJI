@@ -53,6 +53,10 @@ abstract class BaseFragment<VB : ViewBinding>(
   }
 
   fun showToast(@StringRes messageResId: Int) {
-    Toast.makeText(context, getString(messageResId), Toast.LENGTH_SHORT).show()
+    showToast(getString(messageResId))
+  }
+
+  fun showToast(message: String) {
+    Toast.makeText(context, message, Toast.LENGTH_SHORT).show()
   }
 }

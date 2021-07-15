@@ -8,7 +8,14 @@
   <dimen name="margin_40">40dp</dimen>
 
 
+  <dimen name="radius_8">8dp</dimen>
+
+
   <dimen name="splash_height">55dp</dimen>
+
+
+  <dimen name="view_header_image_height">57dp</dimen>
+  <dimen name="view_header_image_width">57dp</dimen>
 
 
 </resources>

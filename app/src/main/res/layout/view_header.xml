@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  xmlns:tools="http://schemas.android.com/tools"
+  android:layout_width="match_parent"
+  android:layout_height="wrap_content"
+  app:cardCornerRadius="@dimen/radius_8"
+  tools:cardBackgroundColor="#3F51B5">
+
+  <androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.appcompat.widget.AppCompatImageView
+      android:id="@+id/ivHeader"
+      android:layout_width="@dimen/view_header_image_width"
+      android:layout_height="@dimen/view_header_image_height"
+      android:layout_marginStart="@dimen/margin_16"
+      app:layout_constraintBottom_toBottomOf="@+id/tvHeader"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="@+id/tvHeader"
+      tools:src="@tools:sample/backgrounds/scenic">
+
+    </androidx.appcompat.widget.AppCompatImageView>
+
+    <TextView
+      android:id="@+id/tvHeader"
+      style="@style/ViewHeaderTitleStyle"
+      android:layout_width="0dp"
+      android:layout_height="wrap_content"
+      android:layout_margin="@dimen/margin_16"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toEndOf="@+id/ivHeader"
+      app:layout_constraintTop_toTopOf="parent"
+      tools:text="@tools:sample/lorem">
+
+    </TextView>
+
+  </androidx.constraintlayout.widget.ConstraintLayout>
+
+</com.google.android.material.card.MaterialCardView>

@@ -21,6 +21,7 @@ class CredentialsValidator(private val listener: CredentialsValidatorResultListe
       }
     }
   }
+
 }
 
 interface CredentialsValidatorResultListener {
