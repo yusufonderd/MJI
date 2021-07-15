@@ -24,3 +24,4 @@ In this case, usign MVVM architecture and repository pattern. This app inspired 
 - Kotlin Dsl
 - More Unit tests
 - Better UX for Media player
+- Room support
