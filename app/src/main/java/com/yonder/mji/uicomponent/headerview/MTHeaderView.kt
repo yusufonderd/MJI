@@ -1,23 +1,19 @@
-package com.yonder.mji.uicomponent
+package com.yonder.mji.uicomponent.headerview
 
 import android.content.Context
-import android.content.res.ColorStateList
-import android.graphics.Color
 import android.util.AttributeSet
 import android.view.LayoutInflater
-import androidx.annotation.ColorRes
 import androidx.annotation.DrawableRes
 import androidx.annotation.StringRes
+import androidx.cardview.widget.CardView
 import androidx.core.content.ContextCompat
-import com.google.android.material.card.MaterialCardView
 import com.yonder.mji.databinding.ViewHeaderBinding
-
 
 class MTHeaderView @JvmOverloads constructor(
   context: Context,
   attrs: AttributeSet? = null,
   defStyleAttr: Int = 0
-) : MaterialCardView(context, attrs, defStyleAttr) {
+) : CardView(context, attrs, defStyleAttr) {
 
   private val binding: ViewHeaderBinding by lazy {
     ViewHeaderBinding.inflate(LayoutInflater.from(context), this, true)

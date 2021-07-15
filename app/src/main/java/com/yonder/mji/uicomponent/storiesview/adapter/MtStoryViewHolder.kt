@@ -7,12 +7,17 @@ import com.yonder.mji.databinding.ItemMtStoryBinding
 import com.yonder.mji.scenes.home.domain.model.StoryUIModel
 
 
-class MtStoryViewHolder(view: View) : RecyclerView.ViewHolder(view) {
+class MtStoryViewHolder(view: View,
+  private val onClickStory: ((story: StoryUIModel) -> Unit)?) :
+  RecyclerView.ViewHolder(view) {
   private val binding = ItemMtStoryBinding.bind(view)
 
-  fun bind(story : StoryUIModel) = with(binding){
+  fun bind(story: StoryUIModel) = with(binding) {
     ivStory.setUrl(story.image.large)
     tvTitle.text = story.name
     tvSubtitle.text = story.category
+    itemView.setOnClickListener {
+      onClickStory?.invoke(story)
+    }
   }
 }

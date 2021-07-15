@@ -7,6 +7,7 @@ import com.yonder.mji.R
 import com.yonder.mji.core.base.BaseFragment
 import com.yonder.mji.databinding.FragmentHomeBinding
 import com.yonder.mji.scenes.home.domain.model.HomeUIModel
+import com.yonder.mji.scenes.home.domain.model.StoryUIModel
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.flow.collect
 
@@ -39,6 +40,8 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(FragmentHomeBinding::infl
     mtMeditationView.initView(homeUIModel.meditations)
     mtHeaderView.isVisible = homeUIModel.isBannerEnabled
     mtHeaderView.initView(R.drawable.ic_night,R.string.title_view_header)
-    mtStoriesView.initView(homeUIModel.stories)
+    mtStoriesView.initView(homeUIModel.stories){ story: StoryUIModel ->
+      TODO("Navigate story detail")
+    }
   }
 }

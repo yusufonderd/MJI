@@ -20,11 +20,14 @@ class MtStoriesView @JvmOverloads constructor(
     ViewStoriesBinding.inflate(LayoutInflater.from(context), this, true)
   }
 
+  var onClickStory: ((story: StoryUIModel) -> Unit)? = null
+
   private val adapter: MtStoryAdapter by lazy {
-    MtStoryAdapter()
+    MtStoryAdapter(onClickStory)
   }
 
-  fun initView(storyList : List<StoryUIModel>){
+  fun initView(storyList: List<StoryUIModel>, onClickStory: ((story: StoryUIModel) -> Unit)? = null) {
+    this.onClickStory = onClickStory
     binding.recyclerView.adapter = adapter.apply {
       submitList(storyList)
     }

@@ -37,7 +37,7 @@
       app:layout_constraintStart_toStartOf="@+id/guidelineLeft"
       app:layout_constraintTop_toTopOf="@+id/guidelineTop" />
 
-    <com.yonder.mji.uicomponent.MTHeaderView
+    <com.yonder.mji.uicomponent.headerview.MTHeaderView
       android:id="@+id/mtHeaderView"
       android:layout_width="0dp"
       app:cardBackgroundColor="@color/header_bg"
