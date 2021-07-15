@@ -4,9 +4,8 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.yonder.mji.R
-import com.yonder.mji.core.base.BaseListAdapter
+import com.yonder.mji.common.base.BaseListAdapter
 import com.yonder.mji.scenes.home.domain.model.MeditationUIModel
-import com.yonder.mji.scenes.home.domain.model.StoryUIModel
 import javax.inject.Inject
 
 

@@ -5,19 +5,19 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import com.yonder.mji.R
-import com.yonder.mji.core.base.BaseFragment
-import com.yonder.mji.core.utils.decider.StringFormatDecider
+import com.yonder.mji.common.base.BaseFragment
+import com.yonder.mji.common.utils.StringFormatDecider
 import com.yonder.mji.databinding.FragmentHomeBinding
 import com.yonder.mji.scenes.home.domain.mapper.HomeDetailMapper
 import com.yonder.mji.scenes.home.domain.model.HomeDetailArgData
 import com.yonder.mji.scenes.home.domain.model.HomeUIModel
+import com.yonder.mji.scenes.home.domain.model.MeditationUIModel
 import com.yonder.mji.scenes.home.domain.model.StoryUIModel
 import com.yonder.statelayout.State
 import com.yonder.statelayout.StateLayoutListener
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.flow.collect
 import javax.inject.Inject
-
 
 @AndroidEntryPoint
 class HomeFragment : BaseFragment<FragmentHomeBinding>(FragmentHomeBinding::inflate) {
@@ -69,26 +69,33 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(FragmentHomeBinding::infl
 
   private fun loadViewState(homeUIModel: HomeUIModel, username: String) = with(binding) {
     binding.stateLayoutView.setState(State.CONTENT)
-    with(mtMeditationView) {
+    initMeditations(homeUIModel.meditations)
+    initStories(homeUIModel.stories)
+    initHeader(homeUIModel.isBannerEnabled, username)
+  }
+
+  private fun initHeader(isBannerEnabled: Boolean, username: String) = with(binding.mtHeaderView) {
+    isVisible = isBannerEnabled
+    initView(
+      R.drawable.ic_night,
+      stringFormatDecider.format(R.string.title_view_header, username)
+    )
+  }
+
+  private fun initStories(stories: List<StoryUIModel>) = with(binding.mtStoriesView) {
+    onClickStory = { story ->
+      navigateToDetail(data = HomeDetailMapper.mapWithStory(story))
+    }
+    initView(stories)
+  }
+
+  private fun initMeditations(meditations: List<MeditationUIModel>) =
+    with(binding.mtMeditationView) {
       onClickMeditation = { meditation ->
         navigateToDetail(data = HomeDetailMapper.mapWithMeditation(meditation))
       }
-      initView(homeUIModel.meditations)
+      initView(meditations)
     }
-    with(mtStoriesView) {
-      onClickStory = { story ->
-        navigateToDetail(data = HomeDetailMapper.mapWithStory(story))
-      }
-      initView(homeUIModel.stories)
-    }
-    with(mtHeaderView) {
-      isVisible = homeUIModel.isBannerEnabled
-      initView(
-        R.drawable.ic_night,
-        stringFormatDecider.format(R.string.title_view_header, username)
-      )
-    }
-  }
 
   private fun navigateToDetail(data: HomeDetailArgData) {
     findNavController().navigate(HomeFragmentDirections.actionHomeDetail(data))

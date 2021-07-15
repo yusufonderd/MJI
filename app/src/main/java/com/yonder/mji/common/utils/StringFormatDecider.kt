@@ -1,4 +1,4 @@
-package com.yonder.mji.core.utils.decider
+package com.yonder.mji.common.utils
 
 import android.content.Context
 import androidx.annotation.StringRes

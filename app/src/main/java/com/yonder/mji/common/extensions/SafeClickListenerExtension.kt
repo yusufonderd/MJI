@@ -1,4 +1,4 @@
-package com.yonder.mji.core.extensions
+package com.yonder.mji.common.extensions
 
 import android.os.SystemClock
 import android.view.View

@@ -4,8 +4,8 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.yonder.mji.data.local.usecase.UserPreferenceUseCase
-import com.yonder.mji.scenes.login.utils.CredentialsValidator
-import com.yonder.mji.scenes.login.utils.CredentialsValidatorResultListener
+import com.yonder.mji.common.utils.CredentialsValidator
+import com.yonder.mji.common.utils.CredentialsValidatorResultListener
 import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
 

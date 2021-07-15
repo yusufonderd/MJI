@@ -2,8 +2,8 @@ package com.yonder.mji.uicomponent.meditationview.adapter
 
 import android.view.View
 import androidx.recyclerview.widget.RecyclerView
+import com.yonder.mji.common.extensions.setSafeOnClickListener
 import com.yonder.mji.core.extensions.setImageUrl
-import com.yonder.mji.core.extensions.setSafeOnClickListener
 import com.yonder.mji.databinding.ItemMtMeditationBinding
 import com.yonder.mji.scenes.home.domain.model.MeditationUIModel
 

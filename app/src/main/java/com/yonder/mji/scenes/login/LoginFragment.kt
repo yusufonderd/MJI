@@ -2,7 +2,7 @@ package com.yonder.mji.scenes.login
 
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
-import com.yonder.mji.core.base.BaseFragment
+import com.yonder.mji.common.base.BaseFragment
 import com.yonder.mji.databinding.FragmentLoginBinding
 import dagger.hilt.android.AndroidEntryPoint
 

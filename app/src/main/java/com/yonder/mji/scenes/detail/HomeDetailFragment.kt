@@ -3,8 +3,8 @@ package com.yonder.mji.scenes.detail
 import androidx.navigation.fragment.navArgs
 import com.yonder.mji.R
 import com.yonder.mji.common.mediaplayer.MtMediaPlayer
-import com.yonder.mji.core.base.BaseFragment
-import com.yonder.mji.core.extensions.setSafeOnClickListener
+import com.yonder.mji.common.base.BaseFragment
+import com.yonder.mji.common.extensions.setSafeOnClickListener
 import com.yonder.mji.data.remote.service.Endpoints
 import com.yonder.mji.databinding.FragmentHomeDetailBinding
 import dagger.hilt.android.AndroidEntryPoint

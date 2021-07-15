@@ -1,4 +1,4 @@
-package com.yonder.mji.core.base
+package com.yonder.mji.common.base
 
 import android.view.LayoutInflater
 import android.view.ViewGroup

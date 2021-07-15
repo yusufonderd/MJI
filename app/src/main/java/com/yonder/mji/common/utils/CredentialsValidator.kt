@@ -1,9 +1,8 @@
-package com.yonder.mji.scenes.login.utils
+package com.yonder.mji.common.utils
 
 import androidx.annotation.StringRes
 import com.yonder.mji.R
 import com.yonder.mji.core.utils.RegexValidator
-
 
 private const val PASSWORD_REGEX_PATTERN = "^(?=.*?[A-Z])(?=.*?[0-9]).{6,}$"
 private const val USERNAME_VALIDATION_CHARACTER_LIMIT = 2
