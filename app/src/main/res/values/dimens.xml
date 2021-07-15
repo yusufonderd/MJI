@@ -7,15 +7,16 @@
   <dimen name="margin_32">24dp</dimen>
   <dimen name="margin_40">40dp</dimen>
 
-
   <dimen name="radius_8">8dp</dimen>
 
-
   <dimen name="splash_height">55dp</dimen>
-
 
   <dimen name="view_header_image_height">57dp</dimen>
   <dimen name="view_header_image_width">57dp</dimen>
 
+  <dimen name="item_meditation_height">219dp</dimen>
+  <dimen name="item_meditation_width">156dp</dimen>
 
+  <dimen name="item_story_height">156dp</dimen>
+  <dimen name="item_story_width">156dp</dimen>
 </resources>

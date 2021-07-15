@@ -5,8 +5,14 @@ import com.yonder.mji.data.remote.model.MeditationResponse
 import com.yonder.mji.scenes.home.domain.model.MeditationUIModel
 import javax.inject.Inject
 
-class MeditationMapper @Inject constructor() : BaseMapper<MeditationResponse, MeditationUIModel> {
+class MeditationMapper @Inject constructor(
+  var imageMapper: ImageMapper
+) : BaseMapper<MeditationResponse, MeditationUIModel> {
   override fun map(input: MeditationResponse): MeditationUIModel {
-    return MeditationUIModel(input.title.orEmpty())
+    return MeditationUIModel(
+      title = input.title.orEmpty(),
+      subTitle = input.subtitle.orEmpty(),
+      image = imageMapper.map(input = input.image!!)
+    )
   }
 }

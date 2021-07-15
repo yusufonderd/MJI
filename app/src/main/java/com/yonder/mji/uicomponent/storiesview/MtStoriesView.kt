@@ -1,10 +1,13 @@
-package com.yonder.mji.uicomponent
+package com.yonder.mji.uicomponent.storiesview
 
 import android.content.Context
 import android.util.AttributeSet
 import android.view.LayoutInflater
 import androidx.constraintlayout.widget.ConstraintLayout
 import com.yonder.mji.databinding.ViewStoriesBinding
+import com.yonder.mji.scenes.home.domain.model.StoryUIModel
+import com.yonder.mji.uicomponent.meditationview.adapter.MtMeditationAdapter
+import com.yonder.mji.uicomponent.storiesview.adapter.MtStoryAdapter
 
 
 class MtStoriesView @JvmOverloads constructor(
@@ -17,4 +20,13 @@ class MtStoriesView @JvmOverloads constructor(
     ViewStoriesBinding.inflate(LayoutInflater.from(context), this, true)
   }
 
+  private val adapter: MtStoryAdapter by lazy {
+    MtStoryAdapter()
+  }
+
+  fun initView(storyList : List<StoryUIModel>){
+    binding.recyclerView.adapter = adapter.apply {
+      submitList(storyList)
+    }
+  }
 }

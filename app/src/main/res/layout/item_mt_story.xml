@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  xmlns:tools="http://schemas.android.com/tools"
+  android:layout_width="wrap_content"
+  android:layout_height="wrap_content"
+  android:layout_marginBottom="@dimen/margin_32">
+
+  <com.google.android.material.imageview.ShapeableImageView
+    android:id="@+id/ivStory"
+    android:layout_width="@dimen/item_story_width"
+    android:layout_height="@dimen/item_story_height"
+    android:scaleType="center"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent"
+    app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.App.CornerSizePercent"
+    tools:src="@tools:sample/backgrounds/scenic" />
+
+  <androidx.appcompat.widget.AppCompatTextView
+    android:id="@+id/tvTitle"
+    style="@style/HomeMtItemTitleStyle"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    app:layout_constraintStart_toStartOf="@id/ivStory"
+    app:layout_constraintTop_toBottomOf="@id/ivStory"
+    tools:text="@tools:sample/lorem" />
+
+  <androidx.appcompat.widget.AppCompatTextView
+    android:id="@+id/tvSubtitle"
+    style="@style/HomeMtItemSubTitleStyle"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    app:layout_constraintStart_toStartOf="@id/ivStory"
+    app:layout_constraintTop_toBottomOf="@id/tvTitle"
+    tools:text="@tools:sample/lorem" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

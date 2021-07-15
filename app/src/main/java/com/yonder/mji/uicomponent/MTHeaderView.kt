@@ -1,8 +1,11 @@
 package com.yonder.mji.uicomponent
 
 import android.content.Context
+import android.content.res.ColorStateList
+import android.graphics.Color
 import android.util.AttributeSet
 import android.view.LayoutInflater
+import androidx.annotation.ColorRes
 import androidx.annotation.DrawableRes
 import androidx.annotation.StringRes
 import androidx.core.content.ContextCompat
@@ -25,6 +28,6 @@ class MTHeaderView @JvmOverloads constructor(
     @StringRes textResId: Int
   ) {
     binding.tvHeader.setText(textResId)
-    binding.ivHeader.setImageDrawable(ContextCompat.getDrawable(context,imageResId))
+    binding.ivHeader.setImageDrawable(ContextCompat.getDrawable(context, imageResId))
   }
 }
