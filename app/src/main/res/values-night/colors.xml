@@ -3,5 +3,6 @@
 
   <color name="primaryTextColor">#fff</color>
   <color name="secondaryTextColor">#B3FFFFFF</color>
+  <color name="date_bg">#26000000</color>
 
 </resources>

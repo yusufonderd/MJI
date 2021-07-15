@@ -39,8 +39,8 @@
     tools:layout="@layout/fragment_home_detail">
 
     <argument
-      android:name="story"
-      app:argType="com.yonder.mji.scenes.home.domain.model.StoryUIModel" />
+      android:name="detail"
+      app:argType="com.yonder.mji.scenes.home.domain.model.HomeDetailArgData" />
 
   </fragment>
 

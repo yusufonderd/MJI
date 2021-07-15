@@ -7,12 +7,10 @@
   <color name="teal_700">#FF018786</color>
   <color name="primaryTextColor">#FF000000</color>
   <color name="secondaryTextColor">#373737</color>
-
   <color name="white">#FFFFFFFF</color>
-
   <color name="pig_iron">#484848</color>
-
   <color name="header_bg">#4036A3</color>
+  <color name="date_bg">#26000000</color>
 
 
 

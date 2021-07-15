@@ -8,6 +8,8 @@ import com.yonder.mji.R
 import com.yonder.mji.core.base.BaseFragment
 import com.yonder.mji.core.utils.decider.StringFormatDecider
 import com.yonder.mji.databinding.FragmentHomeBinding
+import com.yonder.mji.scenes.home.domain.mapper.HomeDetailMapper
+import com.yonder.mji.scenes.home.domain.model.HomeDetailArgData
 import com.yonder.mji.scenes.home.domain.model.HomeUIModel
 import com.yonder.mji.scenes.home.domain.model.StoryUIModel
 import com.yonder.statelayout.State
@@ -67,18 +69,28 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(FragmentHomeBinding::infl
 
   private fun loadViewState(homeUIModel: HomeUIModel, username: String) = with(binding) {
     binding.stateLayoutView.setState(State.CONTENT)
-    mtMeditationView.initView(homeUIModel.meditations)
-    mtHeaderView.isVisible = homeUIModel.isBannerEnabled
-    mtHeaderView.initView(
-      R.drawable.ic_night,
-      stringFormatDecider.format(R.string.title_view_header, username)
-    )
-    mtStoriesView.initView(homeUIModel.stories) { story ->
-      navigateToDetail(story)
+    with(mtMeditationView) {
+      onClickMeditation = { meditation ->
+        navigateToDetail(data = HomeDetailMapper.mapWithMeditation(meditation))
+      }
+      initView(homeUIModel.meditations)
+    }
+    with(mtStoriesView) {
+      onClickStory = { story ->
+        navigateToDetail(data = HomeDetailMapper.mapWithStory(story))
+      }
+      initView(homeUIModel.stories)
+    }
+    with(mtHeaderView) {
+      isVisible = homeUIModel.isBannerEnabled
+      initView(
+        R.drawable.ic_night,
+        stringFormatDecider.format(R.string.title_view_header, username)
+      )
     }
   }
 
-  private fun navigateToDetail(story: StoryUIModel) {
-    findNavController().navigate(HomeFragmentDirections.actionHomeDetail(story))
+  private fun navigateToDetail(data: HomeDetailArgData) {
+    findNavController().navigate(HomeFragmentDirections.actionHomeDetail(data))
   }
 }

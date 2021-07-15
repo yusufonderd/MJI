@@ -6,7 +6,6 @@ import android.view.LayoutInflater
 import androidx.constraintlayout.widget.ConstraintLayout
 import com.yonder.mji.databinding.ViewStoriesBinding
 import com.yonder.mji.scenes.home.domain.model.StoryUIModel
-import com.yonder.mji.uicomponent.meditationview.adapter.MtMeditationAdapter
 import com.yonder.mji.uicomponent.storiesview.adapter.MtStoryAdapter
 
 
@@ -26,8 +25,7 @@ class MtStoriesView @JvmOverloads constructor(
     MtStoryAdapter(onClickStory)
   }
 
-  fun initView(storyList: List<StoryUIModel>, onClickStory: ((story: StoryUIModel) -> Unit)? = null) {
-    this.onClickStory = onClickStory
+  fun initView(storyList: List<StoryUIModel>) {
     binding.recyclerView.adapter = adapter.apply {
       submitList(storyList)
     }

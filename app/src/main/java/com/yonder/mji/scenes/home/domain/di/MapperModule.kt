@@ -40,9 +40,10 @@ class MapperModule {
 
   @Provides
   fun provideMeditationMapper(
-    imageMapper: ImageMapper
+    imageMapper: ImageMapper,
+    dateFormatDecider: DateFormatDecider
   ): BaseMapper<MeditationResponse, MeditationUIModel> {
-    return MeditationMapper(imageMapper)
+    return MeditationMapper(imageMapper,dateFormatDecider)
   }
 
   @Provides

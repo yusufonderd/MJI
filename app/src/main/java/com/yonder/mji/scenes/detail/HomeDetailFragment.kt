@@ -20,10 +20,10 @@ class HomeDetailFragment :
 
   private val args: HomeDetailFragmentArgs by navArgs()
 
-  private val story get() = args.story
+  private val story get() = args.detail
 
   override fun initUI() = with(binding) {
-    tvTitle.text = story.name
+    tvTitle.text = story.title
     tvText.text = story.text
     tvDate.text = story.date
     btnToggleSound.setSafeOnClickListener {

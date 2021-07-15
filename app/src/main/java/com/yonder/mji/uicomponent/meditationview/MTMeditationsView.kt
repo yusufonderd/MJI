@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import androidx.constraintlayout.widget.ConstraintLayout
 import com.yonder.mji.databinding.ViewMeditationsBinding
 import com.yonder.mji.scenes.home.domain.model.MeditationUIModel
+import com.yonder.mji.scenes.home.domain.model.StoryUIModel
 import com.yonder.mji.uicomponent.meditationview.adapter.MtMeditationAdapter
 
 
@@ -15,12 +16,14 @@ class MTMeditationsView @JvmOverloads constructor(
   defStyleAttr: Int = 0
 ) : ConstraintLayout(context, attrs, defStyleAttr) {
 
+  var onClickMeditation: ((meditation: MeditationUIModel) -> Unit)? = null
+
   private val binding: ViewMeditationsBinding by lazy {
     ViewMeditationsBinding.inflate(LayoutInflater.from(context), this, true)
   }
 
   private val adapter: MtMeditationAdapter by lazy {
-    MtMeditationAdapter()
+    MtMeditationAdapter(onClickMeditation)
   }
 
   fun initView(meditationList: List<MeditationUIModel>) = with(binding) {

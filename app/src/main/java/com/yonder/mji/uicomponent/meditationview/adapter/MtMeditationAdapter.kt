@@ -6,10 +6,11 @@ import androidx.recyclerview.widget.RecyclerView
 import com.yonder.mji.R
 import com.yonder.mji.core.base.BaseListAdapter
 import com.yonder.mji.scenes.home.domain.model.MeditationUIModel
+import com.yonder.mji.scenes.home.domain.model.StoryUIModel
 import javax.inject.Inject
 
 
-class MtMeditationAdapter @Inject constructor() : BaseListAdapter<MeditationUIModel>(
+class MtMeditationAdapter @Inject constructor(private val onClickMeditation: ((meditation: MeditationUIModel) -> Unit)?) : BaseListAdapter<MeditationUIModel>(
   itemsSame = { old, new -> old.title === new.title },
   contentsSame = { old, new -> old == new }
 ) {
@@ -19,7 +20,7 @@ class MtMeditationAdapter @Inject constructor() : BaseListAdapter<MeditationUIMo
     viewType: Int
   ): RecyclerView.ViewHolder {
     val view = LayoutInflater.from(parent.context).inflate(R.layout.item_mt_meditation, parent, false)
-    return MtMeditationViewHolder(view)
+    return MtMeditationViewHolder(view,onClickMeditation)
   }
 
   override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
