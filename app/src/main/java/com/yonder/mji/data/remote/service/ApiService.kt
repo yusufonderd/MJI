@@ -6,7 +6,7 @@ import retrofit2.http.GET
 
 interface ApiService {
 
-  @GET(ApiEndpoints.HOME_PATH)
+  @GET(Endpoints.HOME_PATH)
   suspend fun fetchHome(): HomeResponse
 
 }

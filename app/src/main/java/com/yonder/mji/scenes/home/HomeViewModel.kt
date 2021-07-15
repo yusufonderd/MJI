@@ -1,19 +1,12 @@
 package com.yonder.mji.scenes.home
 
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.yonder.mji.core.data.State
 import com.yonder.mji.core.extensions.humanReadableMessage
-import com.yonder.mji.data.local.prefs.LocalStorage
-import com.yonder.mji.data.local.prefs.LocalStorageConstants
 import com.yonder.mji.data.local.usecase.UserPreferenceUseCase
-import com.yonder.mji.data.remote.service.ApiEndpoints
 import com.yonder.mji.scenes.home.domain.usecase.HomeUseCase
-import com.yonder.mji.scenes.login.LoginViewState
 import dagger.hilt.android.lifecycle.HiltViewModel
-import kotlinx.coroutines.InternalCoroutinesApi
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.collect

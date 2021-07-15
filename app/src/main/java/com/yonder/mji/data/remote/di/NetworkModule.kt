@@ -1,6 +1,6 @@
 package com.yonder.mji.data.remote.di
 
-import com.yonder.mji.data.remote.service.ApiEndpoints
+import com.yonder.mji.data.remote.service.Endpoints
 import com.yonder.mji.data.remote.service.ApiService
 import dagger.Module
 import dagger.Provides
@@ -37,7 +37,7 @@ object NetworkModule {
   fun provideRetrofit(okHttpClient: OkHttpClient): Retrofit {
     return Retrofit.Builder()
       .client(okHttpClient)
-      .baseUrl(ApiEndpoints.BASE_URL)
+      .baseUrl(Endpoints.BASE_URL)
       .addConverterFactory(GsonConverterFactory.create())
       .build()
   }

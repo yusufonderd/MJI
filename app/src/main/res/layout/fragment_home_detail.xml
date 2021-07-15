@@ -3,8 +3,7 @@
   xmlns:app="http://schemas.android.com/apk/res-auto"
   xmlns:tools="http://schemas.android.com/tools"
   android:layout_width="match_parent"
-  android:layout_height="match_parent"
-  android:background="@color/pig_iron">
+  android:layout_height="match_parent">
 
   <androidx.constraintlayout.widget.ConstraintLayout
     android:layout_width="match_parent"
@@ -29,8 +28,9 @@
       android:layout_width="@dimen/home_detail_play_btn_width"
       android:layout_height="@dimen/home_detail_play_btn_height"
       android:layout_marginTop="@dimen/margin_88"
+      android:tint="@color/white"
+      android:src="@drawable/ic_baseline_play_arrow_36"
       android:background="@drawable/bg_play_sound"
-      android:src="@drawable/ic_play_triangle"
       app:layout_constraintEnd_toEndOf="parent"
       app:layout_constraintStart_toStartOf="parent"
       app:layout_constraintTop_toTopOf="parent" />
