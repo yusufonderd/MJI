@@ -9,10 +9,13 @@
   <string name="error_msg_username_not_valid">Username should be longer than two characters</string>
   <string name="error_msg_password_not_valid">Password should consist minimum 6 characters with at least 1 uppercase character, 1 number</string>
 
-  <string name="title_view_header">  Look. Pretty, isn’t it? Perfectly balanced. As all things should be.</string>
+  <string name="title_view_header">Look %s. Pretty, isn’t it? Perfectly balanced. As all things should be.</string>
   <string name="meditations">Meditations</string>
   <string name="stories">Stories</string>
 
   <string name="title_home_page">Home Screen</string>
+
+  <string name="title_home_detail_page">Home Detail Screen</string>
+
 
 </resources>

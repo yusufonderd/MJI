@@ -11,7 +11,7 @@ class LoginFragment : BaseFragment<FragmentLoginBinding>(FragmentLoginBinding::i
 
   private val viewModel: LoginViewModel by viewModels()
 
-  override fun setupUI() = with(binding) {
+  override fun initUI() = with(binding) {
     btnLogin.setOnClickListener {
       viewModel.makeLogin(
         username = tfUsername.text.toString(),

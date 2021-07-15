@@ -21,9 +21,9 @@ class MTHeaderView @JvmOverloads constructor(
 
   fun initView(
     @DrawableRes imageResId: Int,
-    @StringRes textResId: Int
+    text: String
   ) {
-    binding.tvHeader.setText(textResId)
+    binding.tvHeader.text = text
     binding.ivHeader.setImageDrawable(ContextCompat.getDrawable(context, imageResId))
   }
 }

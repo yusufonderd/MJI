@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-
   <style name="HomeMtItemTitleStyle">
     <item name="android:textSize">16sp</item>
     <item name="android:textColor">@color/primaryTextColor</item>
@@ -42,5 +41,20 @@
     <item name="cornerSize">3%</item>
   </style>
 
+  <style name="HomeDetailTitleStyle">
+    <item name="android:textSize">32sp</item>
+    <item name="android:textColor">@color/primaryTextColor</item>
+    <item name="android:textStyle">bold</item>
+  </style>
+
+  <style name="HomeDetailSubTitleStyle">
+    <item name="android:textSize">20sp</item>
+    <item name="android:textColor">@color/primaryTextColor</item>
+  </style>
+
+  <style name="HomeDetailDateTitleStyle">
+    <item name="android:textSize">18sp</item>
+    <item name="android:textColor">@color/secondaryTextColor</item>
+  </style>
 
 </resources>

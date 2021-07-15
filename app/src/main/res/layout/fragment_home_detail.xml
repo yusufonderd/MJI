@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  xmlns:tools="http://schemas.android.com/tools"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  android:background="@color/pig_iron">
+
+  <androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.Guideline
+      android:id="@+id/guidelineLeft"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:orientation="vertical"
+      app:layout_constraintGuide_begin="@dimen/margin_24" />
+
+    <androidx.constraintlayout.widget.Guideline
+      android:id="@+id/guidelineRight"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:orientation="vertical"
+      app:layout_constraintGuide_end="@dimen/margin_24" />
+
+    <androidx.appcompat.widget.AppCompatImageButton
+      android:id="@+id/btnToggleSound"
+      android:layout_width="@dimen/home_detail_play_btn_width"
+      android:layout_height="@dimen/home_detail_play_btn_height"
+      android:layout_marginTop="@dimen/margin_88"
+      android:background="@drawable/bg_play_sound"
+      android:src="@drawable/ic_play_triangle"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+      android:id="@+id/tvTitle"
+      style="@style/HomeDetailTitleStyle"
+      android:layout_width="0dp"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="@dimen/margin_32"
+      android:gravity="center"
+      app:layout_constraintEnd_toStartOf="@+id/guidelineRight"
+      app:layout_constraintStart_toStartOf="@+id/guidelineLeft"
+      app:layout_constraintTop_toBottomOf="@+id/btnToggleSound"
+      tools:text="@tools:sample/lorem" />
+
+    <TextView
+      android:id="@+id/tvText"
+      style="@style/HomeDetailSubTitleStyle"
+      android:layout_width="0dp"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="@dimen/margin_16"
+      android:gravity="center"
+      app:layout_constraintEnd_toStartOf="@+id/guidelineRight"
+      app:layout_constraintStart_toStartOf="@+id/guidelineLeft"
+      app:layout_constraintTop_toBottomOf="@+id/tvTitle"
+      tools:text="@tools:sample/lorem" />
+
+    <TextView
+      android:id="@+id/tvDate"
+      style="@style/HomeDetailDateTitleStyle"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="@dimen/margin_16"
+      android:layout_marginBottom="@dimen/margin_16"
+      android:background="@drawable/bg_rounded_date"
+      android:gravity="center"
+      android:paddingHorizontal="@dimen/padding_16"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintEnd_toStartOf="@+id/guidelineRight"
+      app:layout_constraintStart_toStartOf="@+id/guidelineLeft"
+      app:layout_constraintTop_toBottomOf="@+id/tvText"
+      tools:text="@tools:sample/lorem" />
+  </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.core.widget.NestedScrollView>

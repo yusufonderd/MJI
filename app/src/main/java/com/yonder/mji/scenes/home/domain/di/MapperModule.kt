@@ -1,6 +1,8 @@
 package com.yonder.mji.scenes.home.domain.di
 
 import com.yonder.mji.core.mapper.BaseMapper
+import com.yonder.mji.core.utils.decider.DateFormatDecider
+import com.yonder.mji.core.utils.decider.StringFormatDecider
 import com.yonder.mji.data.remote.model.HomeResponse
 import com.yonder.mji.data.remote.model.ImageResponse
 import com.yonder.mji.data.remote.model.MeditationResponse
@@ -24,9 +26,10 @@ class MapperModule {
 
   @Provides
   fun provideStoryMapper(
-    imageMapper: ImageMapper
+    imageMapper: ImageMapper,
+    dateFormatDecider: DateFormatDecider
   ): BaseMapper<StoryResponse, StoryUIModel> {
-    return StoryMapper(imageMapper)
+    return StoryMapper(imageMapper, dateFormatDecider)
   }
 
   @Provides
@@ -37,7 +40,7 @@ class MapperModule {
 
   @Provides
   fun provideMeditationMapper(
-     imageMapper: ImageMapper
+    imageMapper: ImageMapper
   ): BaseMapper<MeditationResponse, MeditationUIModel> {
     return MeditationMapper(imageMapper)
   }

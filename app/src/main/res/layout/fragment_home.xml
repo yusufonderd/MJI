@@ -2,7 +2,14 @@
 <androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
   xmlns:app="http://schemas.android.com/apk/res-auto"
   android:layout_width="match_parent"
+  android:fillViewport="true"
   android:layout_height="match_parent">
+
+  <com.yonder.statelayout.StateLayoutView
+    android:id="@+id/stateLayoutView"
+    android:layout_width="match_parent"
+    app:loadingGravity="center"
+    android:layout_height="wrap_content">
 
   <androidx.constraintlayout.widget.ConstraintLayout
     android:layout_width="match_parent"
@@ -47,8 +54,6 @@
       app:layout_constraintTop_toBottomOf="@id/mtMeditationView"
       android:layout_height="wrap_content"/>
 
-
-
     <com.yonder.mji.uicomponent.storiesview.MtStoriesView
       android:id="@+id/mtStoriesView"
       android:layout_width="0dp"
@@ -59,5 +64,6 @@
       app:layout_constraintStart_toStartOf="@+id/guidelineLeft"/>
 
   </androidx.constraintlayout.widget.ConstraintLayout>
+  </com.yonder.statelayout.StateLayoutView>
 
 </androidx.core.widget.NestedScrollView>

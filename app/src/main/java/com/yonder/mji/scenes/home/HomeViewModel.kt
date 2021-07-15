@@ -1,11 +1,17 @@
 package com.yonder.mji.scenes.home
 
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.yonder.mji.core.data.State
 import com.yonder.mji.core.extensions.humanReadableMessage
+import com.yonder.mji.data.local.prefs.LocalStorage
+import com.yonder.mji.data.local.prefs.LocalStorageConstants
+import com.yonder.mji.data.local.usecase.UserPreferenceUseCase
 import com.yonder.mji.data.remote.service.ApiEndpoints
 import com.yonder.mji.scenes.home.domain.usecase.HomeUseCase
+import com.yonder.mji.scenes.login.LoginViewState
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.InternalCoroutinesApi
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -15,7 +21,10 @@ import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
-class HomeViewModel @Inject constructor(val useCase: HomeUseCase) : ViewModel() {
+class HomeViewModel @Inject constructor(
+  private val useCase: HomeUseCase,
+  private val userPreferenceUseCase: UserPreferenceUseCase
+) : ViewModel() {
 
   private val _state = MutableStateFlow<HomeViewState>(HomeViewState.ShowLoading)
   val state: StateFlow<HomeViewState> = _state
@@ -24,12 +33,12 @@ class HomeViewModel @Inject constructor(val useCase: HomeUseCase) : ViewModel() 
     fetchHome()
   }
 
-  private fun fetchHome() {
+   fun fetchHome() {
     viewModelScope.launch {
       useCase.fetchHome().collect { result ->
         _state.value = when (result) {
           is State.Loading -> HomeViewState.ShowLoading
-          is State.Success -> HomeViewState.Load(result.data)
+          is State.Success -> HomeViewState.Load(result.data, userPreferenceUseCase.getUsername())
           is State.Error -> HomeViewState.ShowError(message = result.exception.humanReadableMessage)
         }
       }

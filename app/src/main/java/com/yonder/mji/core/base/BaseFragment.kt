@@ -19,14 +19,9 @@ abstract class BaseFragment<VB : ViewBinding>(
   private var _binding: VB? = null
   val binding get() = _binding!!
 
-
-  open fun setupUI() {
-
-  }
-
-  open fun observeData() {
-
-  }
+  open fun initVariables(){}
+  open fun initUI() {}
+  open fun observeData() {}
 
   override fun onCreateView(
     inflater: LayoutInflater,
@@ -39,7 +34,8 @@ abstract class BaseFragment<VB : ViewBinding>(
 
   override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
     super.onViewCreated(view, savedInstanceState)
-    setupUI()
+    initVariables()
+    initUI()
     observeData()
   }
 

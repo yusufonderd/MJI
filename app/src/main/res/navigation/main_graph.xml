@@ -3,7 +3,7 @@
   xmlns:app="http://schemas.android.com/apk/res-auto"
   android:id="@+id/main_graph"
   xmlns:tools="http://schemas.android.com/tools"
-  app:startDestination="@id/homeFragment">
+  app:startDestination="@id/loginFragment">
 
   <fragment
     android:id="@+id/loginFragment"
@@ -20,12 +20,27 @@
 
   </fragment>
 
-
   <fragment
     android:id="@+id/homeFragment"
     android:name="com.yonder.mji.scenes.home.HomeFragment"
     android:label="@string/title_home_page"
     tools:layout="@layout/fragment_home">
+
+    <action
+      android:id="@+id/action_home_detail"
+      app:destination="@id/homeDetailFragment" />
+
+  </fragment>
+
+  <fragment
+    android:id="@+id/homeDetailFragment"
+    android:name="com.yonder.mji.scenes.detail.HomeDetailFragment"
+    android:label="@string/title_home_detail_page"
+    tools:layout="@layout/fragment_home_detail">
+
+    <argument
+      android:name="story"
+      app:argType="com.yonder.mji.scenes.home.domain.model.StoryUIModel" />
 
   </fragment>
 

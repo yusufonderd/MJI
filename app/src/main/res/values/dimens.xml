@@ -6,6 +6,10 @@
   <dimen name="margin_24">24dp</dimen>
   <dimen name="margin_32">24dp</dimen>
   <dimen name="margin_40">40dp</dimen>
+  <dimen name="margin_88">88dp</dimen>
+
+  <dimen name="padding_16">16dp</dimen>
+
 
   <dimen name="radius_8">8dp</dimen>
 
@@ -19,4 +23,8 @@
 
   <dimen name="item_story_height">156dp</dimen>
   <dimen name="item_story_width">156dp</dimen>
+
+  <dimen name="home_detail_play_btn_height">140dp</dimen>
+  <dimen name="home_detail_play_btn_width">140dp</dimen>
+
 </resources>
