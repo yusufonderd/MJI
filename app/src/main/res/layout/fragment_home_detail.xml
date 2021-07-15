@@ -28,12 +28,25 @@
       android:layout_width="@dimen/home_detail_play_btn_width"
       android:layout_height="@dimen/home_detail_play_btn_height"
       android:layout_marginTop="@dimen/margin_88"
-      android:tint="@color/white"
-      android:src="@drawable/ic_baseline_play_arrow_36"
       android:background="@drawable/bg_play_sound"
+      android:src="@drawable/ic_baseline_play_arrow_36"
+      android:tint="@color/white"
       app:layout_constraintEnd_toEndOf="parent"
       app:layout_constraintStart_toStartOf="parent"
       app:layout_constraintTop_toTopOf="parent" />
+
+    <ProgressBar
+      android:id="@+id/pbLoading"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:visibility="gone"
+      app:layout_constraintBottom_toBottomOf="@+id/btnToggleSound"
+      app:layout_constraintEnd_toEndOf="@+id/btnToggleSound"
+      app:layout_constraintStart_toStartOf="@+id/btnToggleSound"
+      app:layout_constraintTop_toTopOf="@+id/btnToggleSound"
+      tools:visibility="visible">
+
+    </ProgressBar>
 
     <TextView
       android:id="@+id/tvTitle"

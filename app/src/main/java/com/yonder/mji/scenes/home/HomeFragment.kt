@@ -59,7 +59,6 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(FragmentHomeBinding::infl
   }
 
   private fun showError(message: String) {
-    showToast(message)
     binding.stateLayoutView.setState(State.ERROR)
   }
 
